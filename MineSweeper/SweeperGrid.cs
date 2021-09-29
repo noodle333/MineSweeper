@@ -7,6 +7,8 @@ namespace MineSweeper
         static int gridX = 10;
         static int gridY = 10;
 
+        public bool isAlive = true;
+
         public int[,] gridArr = new int[gridX, gridY];
 
         public SweeperGrid()
@@ -30,10 +32,10 @@ namespace MineSweeper
         
         public bool CheckPosition(int x, int y)
         {
-            if (x >= 0 && x <= gridX && y >= 0 && y <= gridY)
+            if (x >= 0 && x <= gridX-1 && y >= 0 && y <= gridY-1)
             {
                 if (gridArr[x, y] == 10)
-                {
+                {   
                     return true;
                 }
             }
@@ -48,13 +50,14 @@ namespace MineSweeper
                 {
                     if (gridArr[i, j] == 10)
                     {
-                        Console.Write("*");
+                        Console.Write("* ");
                     }
                     else
                     {
-                        Console.Write("█");
+                        Console.Write("█ ");
                     }
                 }
+                Console.WriteLine("");
             }
         }
     }
