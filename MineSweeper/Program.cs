@@ -7,7 +7,8 @@ namespace MineSweeper
     {
         static void Main(string[] args)
         {
-            SweeperGrid g = new SweeperGrid();
+            //TODO: Konstruktur tar in 2 int parametrar som bestämmer storlek, minor = total squares / 10, 
+            SweeperGrid g = new SweeperGrid(4,4);
 
             g.Draw();
 
@@ -23,6 +24,7 @@ namespace MineSweeper
                 if (g.CheckPosition(playerX, playerY))
                 {
                     Console.WriteLine("That was a mine!");
+                    Console.ReadLine();
                     break;
                 }
                 else 
